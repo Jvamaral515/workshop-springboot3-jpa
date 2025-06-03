@@ -18,12 +18,14 @@ import jakarta.persistence.Table;
 @Table(name = "tb_payment")
 public class Payment implements Serializable{
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Instant moment;
-	
+	private String type;
+	private Integer installments;
+
 	@JsonIgnore
 	@OneToOne
 	@MapsId
@@ -37,6 +39,14 @@ public class Payment implements Serializable{
 		this.id = id;
 		this.moment = moment;
 		this.order = order;
+	}
+
+	public Payment(Long id, Instant moment, Order order, String type, Integer installments) {
+		this.id = id;
+		this.moment = moment;
+		this.order = order;
+		this.type = type;
+		this.installments = installments;
 	}
 
 	public Long getId() {

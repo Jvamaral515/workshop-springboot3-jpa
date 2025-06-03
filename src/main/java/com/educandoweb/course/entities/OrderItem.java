@@ -1,6 +1,7 @@
 package com.educandoweb.course.entities;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Objects;
 
 import com.educandoweb.course.entities.pk.OrderItemPK;
@@ -18,13 +19,13 @@ public class OrderItem implements Serializable {
 	@EmbeddedId
 	private OrderItemPK id = new OrderItemPK();
 	private Integer quantity;
-	private Double price;
+	private BigDecimal price;
 
 	public OrderItem() {
 
 	}
 
-	public OrderItem(Order order, Product product, Integer quantity, Double price) {
+	public OrderItem(Order order, Product product, Integer quantity, BigDecimal price) {
 		id.setOrder(order);
 		id.setProduct(product);
 		this.quantity = quantity;
@@ -56,16 +57,16 @@ public class OrderItem implements Serializable {
 		this.quantity = quantity;
 	}
 
-	public Double getPrice() {
+	public BigDecimal getPrice() {
 		return price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
 	
-	public Double getSubTotal() {
-		return price * quantity;
+	public BigDecimal getSubTotal() {
+		return price.multiply(BigDecimal.valueOf(quantity));
 	}
 
 	@Override
