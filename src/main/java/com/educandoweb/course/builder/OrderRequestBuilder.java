@@ -1,6 +1,6 @@
 package com.educandoweb.course.builder;
 
-import com.educandoweb.course.DTO.OrderCreateDTO;
+import com.educandoweb.course.dto.OrderCreateDTO;
 
 import java.math.BigDecimal;
 import java.time.Instant;
@@ -52,7 +52,7 @@ public final class OrderRequestBuilder {
             item.setQuantity(qty);
             item.setPrice(price);
             dto.getItems().add(item);
-            return this;                     // permanece em ItemsStep
+            return this;
         }
 
         @Override

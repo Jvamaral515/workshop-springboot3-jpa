@@ -4,7 +4,7 @@ import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 
-import com.educandoweb.course.DTO.OrderCreateDTO;
+import com.educandoweb.course.dto.OrderCreateDTO;
 import com.educandoweb.course.entities.*;
 import com.educandoweb.course.entities.enums.OrderStatus;
 import com.educandoweb.course.repositories.ProductRepository;

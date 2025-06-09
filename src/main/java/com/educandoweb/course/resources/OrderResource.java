@@ -3,7 +3,7 @@ package com.educandoweb.course.resources;
 import java.net.URI;
 import java.util.List;
 
-import com.educandoweb.course.DTO.OrderCreateDTO;
+import com.educandoweb.course.dto.OrderCreateDTO;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import com.educandoweb.course.entities.Order;
 import com.educandoweb.course.services.OrderService;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import com.educandoweb.course.dto.OrderDTO;
 
 @RestController
 @RequestMapping(value = "/orders")
